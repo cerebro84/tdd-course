@@ -53,13 +53,12 @@ public class StringCalculator {
     }
 
     private static List<Integer> splitAndConvert(String numbers, String delimiter) {
-        List<Integer> tmp = Arrays.stream(numbers.split(delimiter, -1)).map(s -> Integer.valueOf(s)).collect(Collectors.toList());
-        return tmp;
+        return Arrays.stream(numbers.split(delimiter, -1)).map(Integer::valueOf).collect(Collectors.toList());
     }
 
     private void isListPositive(List<Integer> numbers) throws NegativesNotAllowed {
         List<Integer> negatives = numbers.stream().filter(integer -> integer < 0).collect(Collectors.toList());
-        if (negatives.size() > 0) {
+        if (!negatives.isEmpty()) {
             throw new NegativesNotAllowed(negatives);
         }
     }

@@ -89,7 +89,7 @@ public class StringCalculatorTest {
 
     @Test
     public void testThatNumbersGreatherThan1000AreIgnored() {
-        assertEquals(1042, StringCalculator.add("//ù\n1000ù1001ù4002ù42"));
+        assertEquals(1042, StringCalculator.add("//ù\n1000,1001\n4002ù42"));
     }
 
 }
