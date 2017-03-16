@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.Random;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
@@ -46,6 +48,23 @@ public class StringCalculatorTest {
     @Ignore
     public void testAddTwoNumbers1And2ShouldReturnTheirSumVeryBig() {
         assertEquals(3, StringCalculator.add("19999999999999999999,999999999999999999999999999999992"));
+    }
+
+    @Test
+    public void testAdd5Numbers() {
+        assertEquals(42, StringCalculator.add("20,18,4"));
+    }
+
+    @Test
+    @Ignore
+    public void testAddUnknownLengthOfRandomNumbers() {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        int length = random.nextInt(40) + 2;
+        for (int i = 0; i < length; i++) {
+            Integer tmp = random.nextInt(42);
+        }
+
     }
 
 }

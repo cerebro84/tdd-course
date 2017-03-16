@@ -11,6 +11,12 @@ public class StringCalculator {
         if (numbersArrays.length == 1) {
             return 0;
         }
-        return Integer.valueOf(numbersArrays[0]) + Integer.valueOf(numbersArrays[1]);
+
+
+        int acc = 0;
+        for (String numberString : numbersArrays) {
+            acc += Integer.valueOf(numberString);
+        }
+        return acc ;
     }
 }
